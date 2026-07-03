@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sri Bhavani Cold Pressed Oils-Pure & Traditional</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/84930ed6be.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <nav>
+    <div class="logo">
+      <i class="fa-solid fa-seedling"></i>
+      <div class="title">
+        <div class="titlep1">Sri Bhavani</div>
+        <div class="titlep2">COLD PRESS OILS</div>
+      </div>
+    </div>
+    <div class="nav">
+      <div><a href="#ourOils" class="nava">Our Oils</a></div>
+      <div><a href="#whyColdPressed" class="nava">Why Cold Pressed?</a></div>
+      <div class="basket">
+        <a href="#Cart">
+        <button class="basket">
+          <i class="fa-solid fa-basket-shopping" style="color: rgb(255, 191, 0);"></i>
+          <div id="basketText">Basket</div>
+          <div id="basketNum">0</div>
+        </button>
+       </a>
+      </div>
+    </div>
+  </nav>
+  <header>
+    <div class="nandw">100% NATURAL & WOOD PRESSED</div>
+    <div class="heading">Traditional Health, Delivered to Your Doorstep</div>
+    <div class="headerText">At Sri Bhavani,we extract our oils at room temperature using traditional wooden
+      churns(Ghani). No chemicals,no high heat,just pure nutrients.</div>
+    <a href="#ourOils"><button class="headerButton">Shop Fresh Oils</button></a>
+  </header>
+  <section id="ourOils">
+    <div class="oils">
+      <div class="oilHeading">
+        <div class="capsule"></div>
+        <div class="oilsText">Our Premium Oil Collection</div>
+      </div>
+      <div class="allOils">
+        <div class="groundnut">
+          <img src="images\groundnut.png" alt="Groundnut">
+          <div class="oilTitle">Cold Pressed Groundnut Oil</div>
+          <div class="oilDescription">Rich in nutrients and perfect for daily deep frying and traditional cooking.</div>
+          <div class="oilBenefits">
+            <div class="benefit1">Wood Pressed</div>
+            <div class="benefit2">Zero Additives</div>
+          </div>
+          <div class="price">
+            <div class="per">
+              <div class="rate">₹350</div>
+              <div class="quantity">/1 Litre</div>
+            </div>
+            <button class="addToCart" onclick="groundnut()">+ Add to Cart</button>
+          </div>
+        </div>
+        <div class="mustard">
+          <img src="images\mustard.png" alt="Groundnut">
+          <div class="oilTitle">Cold Pressed Mustard Oil</div>
+          <div class="oilDescription">Pungent aroma and rich taste. Excellent for robust dishes, pickles, and building
+              immunity.
+          </div>
+          <div class="oilBenefits">
+            <div class="benefit1">100% Pure</div>
+            <div class="benefit2">High Pungency</div>
+          </div>
+          <div class="price">
+            <div class="per">
+              <div class="rate">₹550</div>
+              <div class="quantity">/1 Litre</div>
+            </div>
+            <button class="addToCart" onclick="mustard()">+ Add to Cart</button>
+          </div>
+        </div>
+        <div class="coconut">
+            <img src="images\coconut.png" alt="Groundnut">
+            <div class="oilTitle">Cold Pressed Coconut Oil</div>
+            <div class="oilDescription">Extracted from premium sulfur-free copra. Multipurpose oil for cooking, skin,
+                and hair care.
+            </div>
+            <div class="oilBenefits">
+              <div class="benefit1">Raw&Unrefined</div>
+              <div class="benefit2">Multipurpose</div>
+            </div>
+          <div class="price">
+            <div class="per">
+              <div class="rate">₹800</div>
+              <div class="quantity">/1 Litre</div>
+            </div>
+            <button class="addToCart" onclick="coconut()">+ Add to Cart</button>
+          </div>
+         </div>
+      </div>
+    </div>
+    <div class="cart" id="Cart">
+        <div class="cartHeading">
+            <div class="cartHeadingText">Your Basket</div>
+            <i class="fa-solid fa-cart-shopping" style="color: rgb(3, 77, 22); font-size: larger;"></i>
+        </div>
+        <div class="list" id="idklist">Your basket is currently empty.</div>
+        <div class="subtotal">
+          <div class="carttxt">Subtotal</div>
+          <div id="subtlt">₹0</div>
+        </div>
+        <div class="delivary">
+          <div class="carttxt">Delivary Fee</div>
+          <div id="deltlt">₹0</div>
+        </div>
+        <div class="totalamt">
+          <div class="tlttxt">Total Amount</div>
+          <div id="tlt">₹0</div>
+        </div>
+        <button class="checkout" id='checkout' onclick="checkout()">Proceed to Checkout</button>
+    </div>
+  </section>
+  <section id="whyColdPressed">
+    <div class="whyheading">The Sri Bhavani Cold Pressed Difference</div>
+    <div class="diff">
+      <div class="diff1">
+        <i class="fa-solid fa-temperature-low icons" style="color: rgb(3, 122, 33);"></i>
+        <div class="diffheading">No High Heat Applied</div>
+        <div class="diffdesc">Oils extracted below 45°C preserve vital anti-oxidants, natural flavors, and nutritional value completely intact.</div>
+      </div>
+      <div class="diff2">
+        <i class="fa-solid fa-ban icons" style="color: rgb(3, 122, 33);"></i>
+        <div class="diffheading">Chemical-Free Extraction</div>
+        <div class="diffdesc">We strictly omit petroleum-based solvents, chemical preservatives, or artificial refining agents.</div>
+      </div>
+      <div class="diff3">
+        <i class="fa-solid fa-heart icons" style="color: rgb(3, 122, 33);"></i>
+        <div class="diffheading">Heart-Healthy Fats</div>
+        <div class="diffdesc">Rich in monounsaturated and polyunsaturated fatty acids that support healthy cholesterol balances.</div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    SRI BHAVNI COLD PRESSED OILS PVT.LTD.
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>
