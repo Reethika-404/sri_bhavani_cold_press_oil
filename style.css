@@ -463,10 +463,11 @@ footer {
   gap: 3vw;
   }
   nav {
-    flex-direction: column;
     width: 100vw;
     height: 8vh;
     gap: 10px;
+    display: flex;
+    justify-content: space-around;
   }
 
   .title {
@@ -484,20 +485,35 @@ footer {
 
   .nav {
     padding-right: 0;
-    padding-bottom: 3vh;
+    height: 3vh;
   }
 
   .nava {
     font-size: 1.3vh;
+    display: none;
   }
 
   .basket {
-    height: 1.2vh;
-    width: 18vw;
+    height: 100%;
+    width: 100%;
   }
 
   #basketText {
-    font-size: 1.2vh;
+    font-size: 1.5vh;
+  }
+  #basketNum {
+  color: black;
+  background-color: rgb(255, 146, 44);
+  width: 1.5vh;
+  height: 1.5vh;
+  border-radius: 100%;
+  padding: 2px;
+  font-size: 1.5vh;
+  font-weight: bold;
+  text-align: center;
+  }
+  .fa-basket-shopping {
+  font-size: 1.8vh;
   }
 
   header {
