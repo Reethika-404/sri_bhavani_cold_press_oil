@@ -465,7 +465,8 @@ footer {
   nav {
     flex-direction: column;
     width: 100vw;
-    height: 6vh;
+    height: 8vh;
+    gap: 10px;
   }
 
   .title {
@@ -487,16 +488,16 @@ footer {
   }
 
   .nava {
-    font-size: 1vh;
+    font-size: 1.3vh;
   }
 
   .basket {
-    height: 1vh;
-    width: 6vh;
+    height: 1.2vh;
+    width: 18vw;
   }
 
   #basketText {
-    font-size: 1vh;
+    font-size: 1.2vh;
   }
 
   header {
@@ -562,20 +563,20 @@ footer {
 
   .groundnut {
     width: 90vw;
-    height: 50vh;
-    gap: 1vh;
+    height: 55vh;
+    gap: 1.5vh;
   }
 
   .mustard {
     width: 90vw;
-    height: 50vh;
-    gap: 1vh;
+    height: 55vh;
+    gap: 1.5vh;
   }
 
   .coconut {
     width: 90vw;
-    height: 50vh;
-    gap: 1vh;
+    height: 55vh;
+    gap: 1.5vh;
   }
 
   img {
@@ -586,14 +587,14 @@ footer {
   .oilTitle {
     font-family: 'roboto';
     font-weight: bold;
-    font-size: 2vh;
+    font-size: 2.5vh;
     padding: 1.3vh;
     padding-bottom: 1vh;
   }
 
   .oilDescription {
     font-family: 'poppins';
-    font-size: 1.2vh;
+    font-size: 1.5vh;
     padding: 1.3vh;
     padding-top: 0vh;
     color: rgb(123, 123, 123);
@@ -745,7 +746,7 @@ footer {
   .cartHeadingText {
     font-family: 'roboto';
     font-weight: bold;
-    font-size: 2vw;
+    font-size: 5vw;
   }
 
   .checkout {
@@ -804,5 +805,24 @@ footer {
   box-shadow: 0px 0px 3px black;
   padding: 2vw;
   border-radius: 15px;
+  }
+}
+@media (max-width:490px) {
+  .groundnut {
+    width: 90vw;
+    height: 55vh;
+    gap: 1.5vh;
+  }
+
+  .mustard {
+    width: 90vw;
+    height: 55vh;
+    gap: 1.5vh;
+  }
+
+  .coconut {
+    width: 90vw;
+    height: 55vh;
+    gap: 1.5vh;
   }
 }
