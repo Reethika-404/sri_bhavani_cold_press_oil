@@ -1,150 +1,388 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sri Bhavani Cold Pressed Oils-Pure & Traditional</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://kit.fontawesome.com/84930ed6be.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Bhavani Cold Press Oils - Pure & Traditional</title>
+    <!-- Tailwind CSS for modern, responsive styling -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- FontAwesome for clean iconography -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+<body class="bg-stone-50 font-sans antialiased text-gray-800">
 
-<body>
-  <nav>
-    <div class="logo">
-      <i class="fa-solid fa-seedling"></i>
-      <div class="title">
-        <div class="titlep1">Sri Bhavani</div>
-        <div class="titlep2">COLD PRESS OILS</div>
-      </div>
-    </div>
-    <div class="nav">
-      <div><a href="#ourOils" class="nava">Our Oils</a></div>
-      <div><a href="#whyColdPressed" class="nava">Why Cold Pressed?</a></div>
-      <div class="basket">
-        <a href="#Cart">
-        <button class="basket">
-          <i class="fa-solid fa-basket-shopping" style="color: rgb(255, 191, 0);"></i>
-          <div id="basketText">Basket</div>
-          <div id="basketNum">0</div>
-        </button>
-       </a>
-      </div>
-    </div>
-  </nav>
-  <header>
-    <div class="nandw">100% NATURAL & WOOD PRESSED</div>
-    <div class="heading">Traditional Health, Delivered to Your Doorstep</div>
-    <div class="headerText">At Sri Bhavani,we extract our oils at room temperature using traditional wooden
-      churns(Ghani). No chemicals,no high heat,just pure nutrients.</div>
-    <a href="#ourOils"><button class="headerButton">Shop Fresh Oils</button></a>
-  </header>
-  <section id="ourOils">
-    <div class="oils">
-      <div class="oilHeading">
-        <div class="capsule"></div>
-        <div class="oilsText">Our Premium Oil Collection</div>
-      </div>
-      <div class="allOils">
-        <div class="groundnut">
-          <img src="images\groundnut.png" alt="Groundnut">
-          <div class="oilTitle">Cold Pressed Groundnut Oil</div>
-          <div class="oilDescription">Rich in nutrients and perfect for daily deep frying and traditional cooking.</div>
-          <div class="oilBenefits">
-            <div class="benefit1">Wood Pressed</div>
-            <div class="benefit2">Zero Additives</div>
-          </div>
-          <div class="price">
-            <div class="per">
-              <div class="rate">₹350</div>
-              <div class="quantity">/1 Litre</div>
+    <!-- Header / Navigation -->
+    <header class="bg-emerald-800 text-white shadow-md sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <!-- Updated Logo Icon to Amber -->
+                <div class="bg-amber-500 p-2 rounded-full text-emerald-900 text-xl font-bold">
+                    <i class="fas fa-seedling"></i>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-bold tracking-tight">Sri Bhavani</h1>
+                    <p class="text-xs text-amber-300 font-medium tracking-wider uppercase">Cold Press Oils</p>
+                </div>
             </div>
-            <button class="addToCart" onclick="groundnut()">+ Add to Cart</button>
-          </div>
+            
+            <nav class="flex items-center gap-6">
+                <a href="#products" class="hover:text-amber-300 transition-colors font-medium">Our Oils</a>
+                <a href="#about" class="hover:text-amber-300 transition-colors font-medium">Why Cold Pressed?</a>
+                <button onclick="toggleCart()" class="relative bg-emerald-700 hover:bg-emerald-600 px-4 py-2 rounded-lg transition-all flex items-center gap-2 cursor-pointer">
+                    <i class="fas fa-shopping-basket text-amber-400"></i>
+                    <span>Basket</span>
+                    <span id="cart-count" class="bg-amber-500 text-emerald-950 font-bold text-xs px-2 py-0.5 rounded-full">0</span>
+                </button>
+            </nav>
         </div>
-        <div class="mustard">
-          <img src="images\mustard.png" alt="Groundnut">
-          <div class="oilTitle">Cold Pressed Mustard Oil</div>
-          <div class="oilDescription">Pungent aroma and rich taste. Excellent for robust dishes, pickles, and building
-              immunity.
-          </div>
-          <div class="oilBenefits">
-            <div class="benefit1">100% Pure</div>
-            <div class="benefit2">High Pungency</div>
-          </div>
-          <div class="price">
-            <div class="per">
-              <div class="rate">₹550</div>
-              <div class="quantity">/1 Litre</div>
-            </div>
-            <button class="addToCart" onclick="mustard()">+ Add to Cart</button>
-          </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-emerald-900 to-emerald-800 text-white py-16 px-4 text-center">
+        <div class="max-w-3xl mx-auto">
+            <span class="bg-amber-500/20 text-amber-300 border border-amber-500/30 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">100% Natural & Wood Pressed</span>
+            <h2 class="text-4xl md:text-5xl font-extrabold mt-4 mb-6 leading-tight">Traditional Health, Delivered to Your Doorstep</h2>
+            <p class="text-emerald-100 text-lg mb-8 max-w-2xl mx-auto">At Sri Bhavani, we extract our oils at room temperature using traditional wooden churns (Ghani). No chemicals, no high heat, just pure nutrients.</p>
+            <a href="#products" class="bg-amber-500 hover:bg-amber-400 text-emerald-950 font-bold px-8 py-3 rounded-lg shadow-lg transition-all inline-block">Shop Fresh Oils</a>
         </div>
-        <div class="coconut">
-            <img src="images\coconut.png" alt="Groundnut">
-            <div class="oilTitle">Cold Pressed Coconut Oil</div>
-            <div class="oilDescription">Extracted from premium sulfur-free copra. Multipurpose oil for cooking, skin,
-                and hair care.
+    </section>
+
+    <!-- Main Content Grid -->
+    <main class="max-w-7xl mx-auto px-4 py-12 flex flex-col lg:flex-row gap-8">
+        
+        <!-- Product Catalog -->
+        <section id="products" class="flex-1">
+            <h3 class="text-2xl font-bold text-gray-900 mb-8 flex items-center gap-2">
+                <span class="w-2 h-6 bg-emerald-700 rounded-full"></span>
+                Our Premium Oil Collection
+            </h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Groundnut Oil Card -->
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow flex flex-col">
+                    <img src="images\groundnut.png" alt="groundnut oil">
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-900">Cold Pressed Groundnut Oil</h4>
+                            <p class="text-sm text-gray-500 mt-2">Rich in nutrients and perfect for daily deep frying and traditional cooking.</p>
+                            <div class="flex gap-2 mt-3">
+                                <span class="bg-stone-100 text-stone-700 text-xs px-2.5 py-1 rounded-md font-medium">Wood Pressed</span>
+                                <span class="bg-stone-100 text-stone-700 text-xs px-2.5 py-1 rounded-md font-medium">Zero Additives</span>
+                            </div>
+                        </div>
+                        <div class="mt-6 flex items-center justify-between border-t border-gray-50 pt-4">
+                            <div>
+                                <!-- Updated Price to 350 -->
+                                <span class="text-2xl font-black text-emerald-800">₹350</span>
+                                <span class="text-xs text-gray-400 font-medium">/ 1 Liter</span>
+                            </div>
+                            <!-- Updated Function to 350 -->
+                            <button onclick="addToCart(1, 'Groundnut Oil', 350)" class="bg-emerald-700 hover:bg-emerald-800 text-white font-semibold px-4 py-2 rounded-xl transition-colors cursor-pointer text-sm">
+                                <i class="fas fa-plus mr-1"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mustard Oil Card -->
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow flex flex-col">
+                    <img src="images\mustard.png" alt="mustard oil">
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-900">Cold Pressed Mustard Oil</h4>
+                            <p class="text-sm text-gray-500 mt-2">Pungent aroma and rich taste. Excellent for robust dishes, pickles, and building immunity.</p>
+                            <div class="flex gap-2 mt-3">
+                                <span class="bg-stone-100 text-stone-700 text-xs px-2.5 py-1 rounded-md font-medium">100% Pure</span>
+                                <span class="bg-stone-100 text-stone-700 text-xs px-2.5 py-1 rounded-md font-medium">High Pungency</span>
+                            </div>
+                        </div>
+                        <div class="mt-6 flex items-center justify-between border-t border-gray-50 pt-4">
+                            <div>
+                                <!-- Updated Price to 550 -->
+                                <span class="text-2xl font-black text-emerald-800">₹550</span>
+                                <span class="text-xs text-gray-400 font-medium">/ 1 Liter</span>
+                            </div>
+                            <!-- Updated Function to 550 -->
+                            <button onclick="addToCart(2, 'Mustard Oil', 550)" class="bg-emerald-700 hover:bg-emerald-800 text-white font-semibold px-4 py-2 rounded-xl transition-colors cursor-pointer text-sm">
+                                <i class="fas fa-plus mr-1"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coconut Oil Card -->
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow flex flex-col">
+                    <img src="images\coconut.png" alt="coconut oil">
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-900">Cold Pressed Coconut Oil</h4>
+                            <p class="text-sm text-gray-500 mt-2">Extracted from premium sulfur-free copra. Multipurpose oil for cooking, skin, and hair care.</p>
+                            <div class="flex gap-2 mt-3">
+                                <span class="bg-stone-100 text-stone-700 text-xs px-2.5 py-1 rounded-md font-medium">Raw & Unrefined</span>
+                                <span class="bg-stone-100 text-stone-700 text-xs px-2.5 py-1 rounded-md font-medium">Multipurpose</span>
+                            </div>
+                        </div>
+                        <div class="mt-6 flex items-center justify-between border-t border-gray-50 pt-4">
+                            <div>
+                                <!-- Updated Price to 800 -->
+                                <span class="text-2xl font-black text-emerald-800">₹800</span>
+                                <span class="text-xs text-gray-400 font-medium">/ 1 Liter</span>
+                            </div>
+                            <!-- Updated Function to 800 -->
+                            <button onclick="addToCart(3, 'Coconut Oil', 800)" class="bg-emerald-700 hover:bg-emerald-800 text-white font-semibold px-4 py-2 rounded-xl transition-colors cursor-pointer text-sm">
+                                <i class="fas fa-plus mr-1"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="oilBenefits">
-              <div class="benefit1">Raw&Unrefined</div>
-              <div class="benefit2">Multipurpose</div>
+        </section>
+
+        <!-- Sidebar Shopping Cart Drawer/Panel -->
+        <aside id="cart-panel" class="w-full lg:w-96 bg-white rounded-2xl p-6 shadow-sm border border-gray-100 h-fit sticky top-24">
+            <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center justify-between">
+                <span>Your Basket</span>
+                <i class="fas fa-shopping-cart text-emerald-700"></i>
+            </h3>
+            
+            <div id="cart-items" class="divide-y divide-gray-100 max-h-60 overflow-y-auto mb-4 pr-1">
+                <!-- Cart items load here dynamically -->
+                <p class="text-gray-400 text-center py-8 text-sm">Your basket is currently empty.</p>
             </div>
-          <div class="price">
-            <div class="per">
-              <div class="rate">₹800</div>
-              <div class="quantity">/1 Litre</div>
+
+            <div class="border-t border-gray-100 pt-4 space-y-2 text-sm text-gray-600">
+                <div class="flex justify-between">
+                    <span>Subtotal</span>
+                    <span id="cart-subtotal" class="font-semibold text-gray-900">₹0</span>
+                </div>
+                <div class="flex justify-between">
+                    <span>Delivery Fee</span>
+                    <span id="cart-delivery" class="font-semibold text-gray-900">₹0</span>
+                </div>
+                <div class="flex justify-between text-base font-bold text-gray-900 pt-2 border-t border-dashed border-gray-100">
+                    <span>Total Amount</span>
+                    <span id="cart-total" class="text-emerald-800">₹0</span>
+                </div>
             </div>
-            <button class="addToCart" onclick="coconut()">+ Add to Cart</button>
-          </div>
-         </div>
-      </div>
+
+            <button onclick="openCheckoutModal()" id="checkout-btn" disabled class="w-full mt-6 bg-gray-300 text-gray-500 font-bold py-3 rounded-xl transition-all flex items-center justify-center gap-2 cursor-not-allowed">
+                Proceed to Checkout
+            </button>
+        </aside>
+    </main>
+
+    <!-- Why Choose Us / Education section -->
+    <section id="about" class="bg-stone-100 py-16 px-4">
+        <div class="max-w-5xl mx-auto text-center">
+            <h3 class="text-3xl font-bold text-gray-900 mb-12">The Sri Bhavani Cold Pressed Difference</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-4">
+                    <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mx-auto text-emerald-800 text-xl mb-4">
+                        <i class="fas fa-temperature-low"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2">No High Heat Applied</h4>
+                    <p class="text-gray-600 text-sm">Oils extracted below 45°C preserve vital anti-oxidants, natural flavors, and nutritional value completely intact.</p>
+                </div>
+                <div class="p-4">
+                    <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mx-auto text-emerald-800 text-xl mb-4">
+                        <i class="fas fa-ban"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2">Chemical-Free Extraction</h4>
+                    <p class="text-gray-600 text-sm">We strictly omit petroleum-based solvents, chemical preservatives, or artificial refining agents.</p>
+                </div>
+                <div class="p-4">
+                    <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mx-auto text-emerald-800 text-xl mb-4">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2">Heart-Healthy Fats</h4>
+                    <p class="text-gray-600 text-sm">Rich in monounsaturated and polyunsaturated fatty acids that support healthy cholesterol balances.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-stone-900 text-stone-400 py-8 px-4 border-t border-stone-800 text-center text-sm">
+        <p>&copy; 2026 Sri Bhavani Cold Press Oils. All Rights Reserved.</p>
+        <p class="mt-2 text-stone-600">Premium Wood Pressed Oils Manufactured and Packaged Under Strict Hygienic Conditions.</p>
+    </footer>
+
+    <!-- Checkout Modal -->
+    <div id="checkout-modal" class="fixed inset-0 z-50 hidden bg-black/60 flex items-center justify-center backdrop-blur-sm px-4 transition-opacity">
+        <div class="bg-white rounded-2xl p-6 w-full max-w-md shadow-2xl relative">
+            <button onclick="closeCheckoutModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 cursor-pointer">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            <h3 class="text-2xl font-bold text-gray-900 mb-2">Delivery Details</h3>
+            <p class="text-sm text-gray-500 mb-6">Fill in your details to place the order via WhatsApp.</p>
+            
+            <form id="checkout-form" onsubmit="submitToWhatsApp(event)">
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                        <input type="text" id="cust-name" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 focus:outline-none transition-shadow">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Phone / WhatsApp Number</label>
+                        <input type="tel" id="cust-phone" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 focus:outline-none transition-shadow">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Full Delivery Address</label>
+                        <textarea id="cust-address" required rows="3" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 focus:outline-none transition-shadow"></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="w-full mt-6 bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-3 rounded-xl shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer">
+                    <i class="fab fa-whatsapp text-xl"></i> Send Order on WhatsApp
+                </button>
+            </form>
+        </div>
     </div>
-    <div class="cart" id="Cart">
-        <div class="cartHeading">
-            <div class="cartHeadingText">Your Basket</div>
-            <i class="fa-solid fa-cart-shopping" style="color: rgb(3, 77, 22); font-size: larger;"></i>
-        </div>
-        <div class="list" id="idklist">Your basket is currently empty.</div>
-        <div class="subtotal">
-          <div class="carttxt">Subtotal</div>
-          <div id="subtlt">₹0</div>
-        </div>
-        <div class="delivary">
-          <div class="carttxt">Delivary Fee</div>
-          <div id="deltlt">₹0</div>
-        </div>
-        <div class="totalamt">
-          <div class="tlttxt">Total Amount</div>
-          <div id="tlt">₹0</div>
-        </div>
-        <button class="checkout" id='checkout' onclick="checkout()">Proceed to Checkout</button>
-    </div>
-  </section>
-  <section id="whyColdPressed">
-    <div class="whyheading">The Sri Bhavani Cold Pressed Difference</div>
-    <div class="diff">
-      <div class="diff1">
-        <i class="fa-solid fa-temperature-low icons" style="color: rgb(3, 122, 33);"></i>
-        <div class="diffheading">No High Heat Applied</div>
-        <div class="diffdesc">Oils extracted below 45°C preserve vital anti-oxidants, natural flavors, and nutritional value completely intact.</div>
-      </div>
-      <div class="diff2">
-        <i class="fa-solid fa-ban icons" style="color: rgb(3, 122, 33);"></i>
-        <div class="diffheading">Chemical-Free Extraction</div>
-        <div class="diffdesc">We strictly omit petroleum-based solvents, chemical preservatives, or artificial refining agents.</div>
-      </div>
-      <div class="diff3">
-        <i class="fa-solid fa-heart icons" style="color: rgb(3, 122, 33);"></i>
-        <div class="diffheading">Heart-Healthy Fats</div>
-        <div class="diffdesc">Rich in monounsaturated and polyunsaturated fatty acids that support healthy cholesterol balances.</div>
-      </div>
-    </div>
-  </section>
-  <footer>
-    SRI BHAVNI COLD PRESSED OILS PVT.LTD.
-  </footer>
-  <script src="script.js"></script>
+
+    <!-- Shopping Cart Javascript Logic -->
+    <script>
+        let cart = [];
+
+        function addToCart(id, name, price) {
+            const existingItem = cart.find(item => item.id === id);
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ id, name, price, quantity: 1 });
+            }
+            updateCartUI();
+        }
+
+        function updateQuantity(id, change) {
+            const item = cart.find(item => item.id === id);
+            if (item) {
+                item.quantity += change;
+                if (item.quantity <= 0) {
+                    cart = cart.filter(i => i.id !== id);
+                }
+            }
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartCount = document.getElementById('cart-count');
+            const cartSubtotal = document.getElementById('cart-subtotal');
+            const cartDelivery = document.getElementById('cart-delivery');
+            const cartTotal = document.getElementById('cart-total');
+            const checkoutBtn = document.getElementById('checkout-btn');
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p class="text-gray-400 text-center py-8 text-sm">Your basket is currently empty.</p>';
+                cartCount.innerText = '0';
+                cartSubtotal.innerText = '₹0';
+                cartDelivery.innerText = '₹0';
+                cartTotal.innerText = '₹0';
+                
+                checkoutBtn.disabled = true;
+                checkoutBtn.className = "w-full mt-6 bg-gray-300 text-gray-500 font-bold py-3 rounded-xl transition-all flex items-center justify-center gap-2 cursor-not-allowed";
+                return;
+            }
+
+            // Calculate metrics
+            let totalItems = 0;
+            let subtotal = 0;
+            cartItemsContainer.innerHTML = '';
+
+            cart.forEach(item => {
+                totalItems += item.quantity;
+                subtotal += item.price * item.quantity;
+
+                cartItemsContainer.innerHTML += `
+                    <div class="flex items-center justify-between py-3">
+                        <div>
+                            <h5 class="font-semibold text-gray-900 text-sm">${item.name}</h5>
+                            <p class="text-xs text-gray-500">₹${item.price} x ${item.quantity}</p>
+                        </div>
+                        <div class="flex items-center gap-2 bg-stone-100 rounded-lg p-1">
+                            <button onclick="updateQuantity(${item.id}, -1)" class="w-6 h-6 flex items-center justify-center text-gray-600 hover:bg-stone-200 rounded cursor-pointer text-xs font-bold">-</button>
+                            <span class="w-4 text-center font-bold text-xs">${item.quantity}</span>
+                            <button onclick="updateQuantity(${item.id}, 1)" class="w-6 h-6 flex items-center justify-center text-gray-600 hover:bg-stone-200 rounded cursor-pointer text-xs font-bold">+</button>
+                        </div>
+                    </div>
+                `;
+            });
+
+            // Delivery is free on orders over ₹500
+            const deliveryFee = subtotal > 500 || subtotal === 0 ? 0 : 50;
+            const grandTotal = subtotal + deliveryFee;
+
+            cartCount.innerText = totalItems;
+            cartSubtotal.innerText = `₹${subtotal}`;
+            cartDelivery.innerText = deliveryFee === 0 ? 'FREE' : `₹${deliveryFee}`;
+            cartTotal.innerText = `₹${grandTotal}`;
+
+            // Activate checkout button
+            checkoutBtn.disabled = false;
+            checkoutBtn.className = "w-full mt-6 bg-amber-500 hover:bg-amber-400 text-emerald-950 font-bold py-3 rounded-xl shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer";
+        }
+
+        function toggleCart() {
+            const panel = document.getElementById('cart-panel');
+            panel.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function openCheckoutModal() {
+            if (cart.length === 0) return;
+            document.getElementById('checkout-modal').classList.remove('hidden');
+        }
+
+        function closeCheckoutModal() {
+            document.getElementById('checkout-modal').classList.add('hidden');
+        }
+
+        function submitToWhatsApp(event) {
+            event.preventDefault(); // Prevent the form from refreshing the page
+
+            // ** IMPORTANT: REPLACE THIS NUMBER WITH YOUR BUSINESS WHATSAPP NUMBER **
+            // Include your country code. Ex: For India "91", US "1". No '+' sign or spaces.
+            const businessNumber = "918008248845"; 
+
+            // Get customer details
+            const name = document.getElementById('cust-name').value;
+            const phone = document.getElementById('cust-phone').value;
+            const address = document.getElementById('cust-address').value;
+
+            // Generate the message text
+            let orderMessage = `*🛍️ New Order - Sri Bhavani Cold Press Oils*%0A`;
+            orderMessage += `-----------------------------------%0A`;
+            
+            let subtotal = 0;
+            cart.forEach(item => {
+                let itemTotal = item.price * item.quantity;
+                subtotal += itemTotal;
+                orderMessage += `▪️ ${item.name} (x${item.quantity}) - ₹${itemTotal}%0A`;
+            });
+
+            const deliveryFee = subtotal > 500 || subtotal === 0 ? 0 : 50;
+            const grandTotal = subtotal + deliveryFee;
+
+            orderMessage += `-----------------------------------%0A`;
+            orderMessage += `*Subtotal:* ₹${subtotal}%0A`;
+            orderMessage += `*Delivery:* ${deliveryFee === 0 ? 'FREE' : '₹' + deliveryFee}%0A`;
+            orderMessage += `*Grand Total: ₹${grandTotal}*%0A%0A`;
+
+            orderMessage += `*📦 Customer Details:*%0A`;
+            orderMessage += `👤 Name: ${name}%0A`;
+            orderMessage += `📞 Phone: ${phone}%0A`;
+            orderMessage += `🏠 Address: ${address}%0A`;
+
+            // Create the WhatsApp API link
+            const whatsappUrl = `https://wa.me/${businessNumber}?text=${orderMessage}`;
+
+            // Open WhatsApp in a new tab
+            window.open(whatsappUrl, '_blank');
+
+            // Clear the cart and reset form after placing order
+            cart = [];
+            updateCartUI();
+            closeCheckoutModal();
+            document.getElementById('checkout-form').reset();
+        }
+    </script>
 </body>
-
 </html>
